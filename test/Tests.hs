@@ -19,11 +19,11 @@ specs = do
             it "Calcula a area do quadrado " $
               areaQuadrado 2 `shouldBe` 4
             it "Calcula a area do quadrado " $ property $
-              \x -> areaQuadrado x `shouldBe` (x**x :: Float)
+              \x -> areaQuadrado x `shouldBe` (x*x :: Float)
             it "Calcula a area do retangulo " $
               areaRetangulo 2 3 `shouldBe` 6
             it "Calcula a area do retangulo " $ property $
-              \(x,y) -> areaRetangulo x y `shouldBe` abs (x * y :: Int)
+              \(x,y) -> abs (areaRetangulo x y) `shouldBe` abs (x * y :: Int)
             it "Calcula a area do círculo " $ property $
               \x -> areaCirculo x `shouldBe` abs (pi * x**2 :: Float)
             it "Calcula a area do triângulo " $ property $
