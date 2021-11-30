@@ -12,8 +12,7 @@ digaMeuNome
 >>>digaMeuNome
 "Meu Nome"
 -}
-digaMeuNome = "Meu Nome" -- Coloque um nome qualquer aqui.
-
+digaMeuNome = "Meu Nome"
 
 {-
 Esta função retorna a soma de 3 números.
@@ -29,7 +28,7 @@ somaTresNumeros
 600
 
 -}
-somaTresNumeros n1 n2 n3 = undefined
+somaTresNumeros n1 n2 n3 = n1 + n2 + n3
 
 {-
 Esta função retorna a área do quadrado de lado l
@@ -46,7 +45,7 @@ Dica: ** é o operador de potenciação
 >>>areaQuadrado 3
 9.0
 -}
-areaQuadrado l = undefined
+areaQuadrado l = l**2
 
 {-
 Esta função retorna a área do retângulo de lado l1 e l2
@@ -58,7 +57,7 @@ areaRetangulo
 >>>areaRetangulo 3 4
 
 -}
-areaRetangulo l1 l2 = undefined
+areaRetangulo l1 l2 = l1 * l2
 
 {-
 Esta função retorna a área do círculo de raio r
@@ -72,7 +71,7 @@ Dica: pi é uma constante disponível no módulo prelude
 >>>areaCirculo 3
 28.274333882308138
 -}
-areaCirculo r = undefined
+areaCirculo r = pi * r**2
 
 
 {-
@@ -84,7 +83,7 @@ areaTriangulo
 
 >>>areaTriangulo 4 4
 -}
-areaTriangulo a h = undefined
+areaTriangulo a h = (a*h) / 2
 
 
 {-
@@ -97,7 +96,7 @@ areaTriangulo
 >>>areaTrapezio 2 4 3
 9.0
 -}
-areaTrapezio b1 b2 h = undefined
+areaTrapezio b1 b2 h = (b1 + b2) / 2 * h
 
 
 {-
@@ -112,7 +111,7 @@ Dica: sqrt retorna a raiz quadrada de um número
 >>>hipotenusa 3 4
 5.0
 -}
-hipotenusa b c = undefined
+hipotenusa b c = sqrt (b**2 + c**2)
 
 {-
 Escreva uma função de conversão de Célcius para Fahrenheit
@@ -121,7 +120,7 @@ Escreva uma função de conversão de Célcius para Fahrenheit
 32.0
 212.0
 -}
-celsius2fahrenheit c = undefined
+celsius2fahrenheit c = c * 9 / 5 + 32 
 
 {-
 Escreva uma função de conversão de Fahrenheit para Célcius
@@ -133,7 +132,7 @@ Escreva uma função de conversão de Fahrenheit para Célcius
 0.0
 
 -}
-fahrenheit2celsius f = undefined
+fahrenheit2celsius f = (f - 32) * 5/9
 
 -- Defina as seguintes funções usando if then else
 {-
@@ -155,7 +154,9 @@ maiorDeTres
 >>>maiorDeTres (-1) (-2) (-3)
 -1
 -}
-maiorDeTres a b c = undefined
+maiorDeTres a b c = if a >= b && a >= c then a
+                    else if b >= c then b
+                    else c
 
 {-
 Esta função indica se os números passados como parâmetro estão ordenados de forma decrescente
@@ -173,7 +174,7 @@ True
 >>>estaoOrdenados 1 3 2
 False
 -}
-estaoOrdenados a b c = undefined
+estaoOrdenados a b c = if a >= b && b >= c then True else False
 
 {-
 Esta função calcula o preço com desconto dos itens caso um número mínimo tenha sido comprado.
@@ -195,7 +196,7 @@ precoComDesconto
 >>>precoComDesconto 1 4 3 0.1
 3.6
 -}
-precoComDesconto preco quantidade limite desconto = undefined
+precoComDesconto preco quantidade limite desconto = if preco * quantidade > limite then preco * quantidade * (1 - desconto) else preco * quantidade
 
 
 {-
@@ -223,7 +224,11 @@ False
 >>>pedraTesouraPapel 0 2
 False
 -}
-pedraTesouraPapel m1 m2 = undefined
+pedraTesouraPapel m1 m2 = 
+    if m1 == 0 && m2 == 1 then True
+    else if m1 == 1 && m2 == 2 then True
+    else if m1 == 2 && m2 == 0 then True
+    else False
 
 -- Defina as seguintes funções usando guardas
 
@@ -252,7 +257,11 @@ False
 >>>pedraTesouraPapelGuardas 0 2
 False
 -}
-pedraTesouraPapelGuardas m1 m2 = undefined
+pedraTesouraPapelGuardas m1 m2
+  | m1 == 0 && m2 == 1 = True
+  | m1 == 1 && m2 == 2 = True
+  | m1 == 2 && m2 == 0 = True
+  | otherwise = False
 
 {-
 Esta função retorna -1 se os números passados como parâmetro estão em ordem decrescente, 1 ordem crescente, e 0 caso contrário.
@@ -268,7 +277,10 @@ Esta função retorna -1 se os números passados como parâmetro estão em ordem
 >>>sobeDesceBagunca 3 2 1
 -1
 -}
-sobeDesceBagunca x y z = undefined
+sobeDesceBagunca x y z
+    | x >= y && y >= z = -1
+    | x <= y && y <= z = 1
+    | otherwise  = 0
 
 
 {-
@@ -286,4 +298,7 @@ Esta função retorna a quantidade de dias no mês indicado no parâmetro. Assum
 30
 
 -}
-diasMes m = undefined
+diasMes m
+    | m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12 = 31
+    | m == 2 = 28
+    | otherwise = 30
