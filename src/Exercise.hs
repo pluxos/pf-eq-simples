@@ -112,7 +112,7 @@ Dica: sqrt retorna a raiz quadrada de um número
 >>>hipotenusa 3 4
 5.0
 -}
-hipotenusa b c = sqrt undefined
+hipotenusa b c = undefined
 
 {-
 Escreva uma função de conversão de Célcius para Fahrenheit
