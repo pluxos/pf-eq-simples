@@ -1,3 +1,6 @@
+![Points badge](../../blob/badges/.github/badges/points.svg)
+
+
 # Exercícios simples
 
 Abra o arquivo `src/Exercise.hs` e verá diversas funções definidas de forma incompleta ali.

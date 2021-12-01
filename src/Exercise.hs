@@ -1,7 +1,5 @@
 module Exercise where
 
--- Defina as seguintes funções usando equações simples.
-
 {-
 Esta função simplesmente retorna uma string com seu nome (ou qualquer outra string, na verdade).
 
