@@ -49,6 +49,8 @@ specs = do
             it "Ordenados?" $
               estaoOrdenados 3 2 1 `shouldBe` True
             it "Ordenados?" $
+              estaoOrdenados 3 2 2 `shouldBe` True
+            it "Ordenados?" $
               estaoOrdenados 10 8 9 `shouldBe` False
             it "Desconto" $
               precoComDesconto 1 1 3 0.1 `shouldBe` 1
