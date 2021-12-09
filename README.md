@@ -2,7 +2,7 @@
 
 
 # Conteúdo
-Equações simples. If-then-else. Guardas.
+Equações simples.
 
 # Exercícios simples
 
